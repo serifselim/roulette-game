@@ -25,11 +25,6 @@ export const AmountInput = styled.input`
     &:focus{
         outline: none;
     }
-
-    &::before{
-        content: '';
-        background-image: url('../../assets/coin.svg');
-    }
 `;
 
 export const Button = styled.button`
@@ -47,7 +42,8 @@ export const Button = styled.button`
 `;
 
 export const AmountTotal = styled.div`
-
+    display: flex;
+    align-items: center;
 `;
 
 export const AmountTotalText = styled.h2`
@@ -56,5 +52,6 @@ export const AmountTotalText = styled.h2`
 `;
 
 export const Icon = styled.img`
-
+    width: 2rem;
+    margin-right: 1rem;
 `;
