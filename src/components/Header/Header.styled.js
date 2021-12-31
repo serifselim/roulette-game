@@ -3,6 +3,7 @@ import styled from "styled-components";
 const HeaderBox = styled.header`
     padding: 2.5rem 5rem;
     background-color: #17191F;
+    margin-bottom: 1.5rem;
 `;
 
 const HeaderTitle = styled.h1`

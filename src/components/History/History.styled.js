@@ -1,27 +1,34 @@
 import styled from "styled-components";
 
-export const StyledContainer = styled.div`
-
+export const Container = styled.div`
+    display: flex;
+    justify-content: space-between;
+    background-color: #17191F;
+    border-radius: 1rem;
+    padding: 0 3rem;
 `;
 
-export const HistoryGamesDiv = styled.div`
-
+export const ContainerItem = styled.div`
+    display: flex;
+    align-items: center;
 `;
 
-export const HistoryTitle = styled.h4`
-
+export const Title = styled.h4`
+    color: #909090;
+    font-size: 1.6rem;
 `;
 
-export const HistoryGamesList = styled.ul`
-
+export const List = styled.ul`
+    display: flex;
+    margin-left: 2rem;
 `;
 
-export const HistoryGamesListItem = styled.li`
-
+export const ListItem = styled.li`
+    list-style: none;
+    padding: 1rem;
 `;
 
-//Right Side's Styles
-export const HistoryStatisticsBox = styled.div`
-
+export const ItemImage = styled.img`
+    width: 2rem;
 `;
 
