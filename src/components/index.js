@@ -4,9 +4,11 @@
 import Header from './Header/Header'
 import History from './History/History'
 import Roll from './Roll/Roll'
+import Amount from './Amount/Amount'
 
 export {
     Header,
     History,
-    Roll
+    Roll,
+    Amount
 }
