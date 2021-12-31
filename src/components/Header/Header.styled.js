@@ -12,6 +12,8 @@ const HeaderTitle = styled.h1`
 
 const HeaderSpan = styled.span`
     color: #0BF894;
+    font-style: italic;
+    font-weight: 400;
 `;
 
 export {
