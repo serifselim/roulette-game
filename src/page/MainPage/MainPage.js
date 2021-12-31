@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Amount, Header, History, Roll } from '../../components'
+import Choice from "../../components/Choice/Choice";
 import { Main } from "./MainPage.styled";
 
 function MainPage() {
@@ -9,7 +10,8 @@ function MainPage() {
             <Header />
             <Main>
                 <History />
-                <Roll/>
+                {/* <Roll/> */}
+                <Choice/>
                 <Amount/>
             </Main>
         </>

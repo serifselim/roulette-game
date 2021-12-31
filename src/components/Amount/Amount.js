@@ -17,7 +17,7 @@ function Amount() {
             </AmountForm>
 
             <AmountTotal>
-                    <Icon src={coin}/>
+                <Icon src={coin}/>
                 <AmountTotalText>
                         30.57
                 </AmountTotalText>
