@@ -21,8 +21,14 @@ export const AmountInput = styled.input`
     border: none;
     color: #909090;
     font-weight: bold;
+
     &:focus{
         outline: none;
+    }
+
+    &::before{
+        content: '';
+        background-image: url('../../assets/coin.svg');
     }
 `;
 
@@ -33,6 +39,7 @@ export const Button = styled.button`
     color: #909090;
     margin: 0 1rem;
     padding: 1rem;
+    position: relative;
 
     &:hover{
         background-color: #2D303D;
