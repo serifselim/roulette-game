@@ -3,8 +3,10 @@
 
 import Header from './Header/Header'
 import History from './History/History'
+import Roll from './Roll/Roll'
 
 export {
     Header,
-    History
+    History,
+    Roll
 }

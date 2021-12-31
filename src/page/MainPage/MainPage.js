@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Header, History } from '../../components'
+import { Header, History, Roll } from '../../components'
 import { Main } from "./MainPage.styled";
 
 function MainPage() {
@@ -9,6 +9,7 @@ function MainPage() {
             <Header />
             <Main>
                 <History />
+                <Roll/>
             </Main>
         </>
     );
