@@ -1,34 +1,44 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const HistoryContainer = styled.div`
     display: flex;
     justify-content: space-between;
     background-color: #17191F;
     border-radius: 1rem;
-    padding: 0 3rem;
+    padding: .5rem 3rem;
 `;
 
-export const ContainerItem = styled.div`
+export const HistoryContainerItem = styled.div`
     display: flex;
     align-items: center;
 `;
 
-export const Title = styled.h4`
+export const HistoryTitle = styled.h4`
     color: #909090;
     font-size: 1.6rem;
 `;
 
-export const List = styled.ul`
+export const HistoryList = styled.ul`
     display: flex;
     margin-left: 2rem;
 `;
 
-export const ListItem = styled.li`
+export const HistoryListItem = styled.li`
     list-style: none;
     padding: 1rem;
 `;
 
-export const ItemImage = styled.img`
+export const HistoryItemImage = styled.img`
     width: 2rem;
+`;
+
+export const TotalIcon = styled.img`
+    width: 2rem;
+    margin-right: 1rem;
+`;
+
+export const TotalText = styled.h2`
+    color: #0CE287;
+    font-size: 2rem;
 `;
 

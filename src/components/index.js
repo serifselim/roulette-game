@@ -5,10 +5,12 @@ import Header from './Header/Header'
 import History from './History/History'
 import Roll from './Roll/Roll'
 import Amount from './Amount/Amount'
+import Choice from './Choice/Choice'
 
 export {
     Header,
     History,
     Roll,
-    Amount
+    Amount,
+    Choice
 }

@@ -1,8 +1,6 @@
 import React from "react";
 import { AmountContainer, AmountForm, AmountInput, AmountTotal, AmountTotalText, Button, Icon } from "./Amount.styled";
 
-import coin from '../../assets/coin.svg';
-
 function Amount() {
     return (
         <AmountContainer>
@@ -15,13 +13,6 @@ function Amount() {
                 <Button>1/2</Button>
                 <Button>x2</Button>
             </AmountForm>
-
-            <AmountTotal>
-                <Icon src={coin}/>
-                <AmountTotalText>
-                        30.57
-                </AmountTotalText>
-            </AmountTotal>
         </AmountContainer>
     )
 }

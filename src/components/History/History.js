@@ -1,42 +1,47 @@
-import { Container, ContainerItem, List, ListItem, ItemImage, Title } from "./History.styled";
 import purple from '../../assets/purple.svg'
 import green from '../../assets/green.svg'
 import red from '../../assets/red.svg'
 
+import { HistoryContainer, HistoryContainerItem, HistoryTitle, HistoryList, HistoryItemImage, HistoryListItem, TotalIcon, TotalText } from './History.styled';
+import coin from '../../assets/coin.svg';
+
 function History(){
     return(
-        <Container>
-            <ContainerItem>
-                <Title>
+        <HistoryContainer>
+            <HistoryContainerItem>
+                <HistoryTitle>
                     Last Rolls
-                </Title>
+                </HistoryTitle>
 
-                <List>
-                    <ListItem>
-                        <ItemImage src={purple}/>
-                    </ListItem>
+                <HistoryList>
+                    <HistoryListItem>
+                        <HistoryItemImage src={purple}/>
+                    </HistoryListItem>
                     
-                    <ListItem>
-                        <ItemImage src={red}/>
-                    </ListItem>
+                    <HistoryListItem>
+                        <HistoryItemImage src={red}/>
+                    </HistoryListItem>
                     
-                    <ListItem>
-                        <ItemImage src={green}/>
-                    </ListItem>
+                    <HistoryListItem>
+                        <HistoryItemImage src={green}/>
+                    </HistoryListItem>
                     
-                    <ListItem>
-                        <ItemImage src={purple}/>
-                    </ListItem>
-                </List>
+                    <HistoryListItem>
+                        <HistoryItemImage src={purple}/>
+                    </HistoryListItem>
+                </HistoryList>
 
 
-            </ContainerItem>
+            </HistoryContainerItem>
 
-            <ContainerItem>
-                <Title>Last 100 Rolls</Title>
-            </ContainerItem>
+            <HistoryContainerItem>
+                <TotalIcon src={coin}/>
+                <TotalText>
+                        30.57
+                </TotalText>
+            </HistoryContainerItem>
 
-        </Container>
+        </HistoryContainer>
     );
 }
 

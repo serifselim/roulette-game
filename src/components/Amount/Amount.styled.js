@@ -51,7 +51,3 @@ export const AmountTotalText = styled.h2`
     font-size: 2rem;
 `;
 
-export const Icon = styled.img`
-    width: 2rem;
-    margin-right: 1rem;
-`;
