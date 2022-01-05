@@ -12,4 +12,9 @@ export const RollContainer = styled.section`
 export const RollImage = styled.img`
     width: 10%;
     padding: 2rem 0;
+
+    @media (max-width: 768px){
+        width: 20%;
+    }
+    
 `;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { RollContainer, RollImage } from './Roll.styled';
 
-import green from '../../assets/green.svg'
+import green from '../../assets/green.png'
 
 function Roll(){
     return(

@@ -1,6 +1,6 @@
-import purple from '../../assets/purple.svg'
-import green from '../../assets/green.svg'
-import red from '../../assets/red.svg'
+import purple from '../../assets/purple.png'
+import green from '../../assets/green.png'
+import red from '../../assets/red.png'
 
 import { HistoryContainer, HistoryContainerItem, HistoryTitle, HistoryList, HistoryItemImage, HistoryListItem, TotalIcon, TotalText } from './History.styled';
 import coin from '../../assets/coin.svg';

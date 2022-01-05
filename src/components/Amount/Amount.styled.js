@@ -12,6 +12,17 @@ export const AmountContainer = styled.section`
 
 export const AmountForm = styled.form`
     display: flex;
+
+    @media (max-width: 768px){
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    @media (max-width: 420px){
+        align-items: stretch;
+        justify-content: center;
+    }
+
 `;
 
 export const AmountInput = styled.input`
@@ -25,7 +36,15 @@ export const AmountInput = styled.input`
     &:focus{
         outline: none;
     }
+
+    @media (max-width: 768px){
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+
 `;
+
 
 export const Button = styled.button`
     border-radius: .5rem;
@@ -39,6 +58,7 @@ export const Button = styled.button`
     &:hover{
         background-color: #2D303D;
     }
+    
 `;
 
 export const AmountTotal = styled.div`
