@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const AmountContainer = styled.section`
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
     background-color: #17191F;
     border-radius: 1rem;
@@ -42,10 +43,7 @@ export const AmountInput = styled.input`
         margin-bottom: 2rem;
     }
 
-
 `;
-
-
 export const Button = styled.button`
     border-radius: .5rem;
     border: none;

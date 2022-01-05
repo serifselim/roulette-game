@@ -5,7 +5,7 @@ import red from '../../assets/red.png'
 import { HistoryContainer, HistoryContainerItem, HistoryTitle, HistoryList, HistoryItemImage, HistoryListItem, TotalIcon, TotalText } from './History.styled';
 import coin from '../../assets/coin.svg';
 
-function History(){
+function History({money}){
     return(
         <HistoryContainer>
             <HistoryContainerItem>
@@ -37,7 +37,7 @@ function History(){
             <HistoryContainerItem>
                 <TotalIcon src={coin}/>
                 <TotalText>
-                        30.57
+                        {money}
                 </TotalText>
             </HistoryContainerItem>
 

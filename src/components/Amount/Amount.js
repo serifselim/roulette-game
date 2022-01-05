@@ -1,18 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import { AmountContainer, AmountForm, AmountInput, AmountTotal, AmountTotalText, Button, ButtonsContainer, Icon } from "./Amount.styled";
 
-function Amount() {
+function Amount({ setAmount, amount, money }) {
+
+    const actionsList = ['Min', 'Max', '+1', '+10', '1/2', 'x2'];
+
+    const handleChange = (e) => {
+        const currentAmount = e.target.value;
+        setAmount(prevState => prevState = currentAmount);
+    }
+
+    const handleClick = (action) => {
+        switch (action) {
+            case 'Min':
+                setAmount(prevState => prevState = 1);
+                break;
+            case 'Max':
+                setAmount(prevState => prevState = money);
+                break;
+            case '+1':
+                setAmount(prevState => prevState += 1);
+                break;
+            case '+10':
+                setAmount(prevState => prevState += 10);
+                break;
+            case '1/2':
+                setAmount(prevState => prevState /= 2);
+                break;
+            case 'x2':
+                setAmount(prevState => prevState *= 2);
+                break;
+            default:
+                break;
+        }
+    }
+
+    const getActionButtons = actionsList.map((action, index) =>
+        <Button key={index} value={action} onClick={() => handleClick(action)}>{action}</Button>);
+
     return (
         <AmountContainer>
-            <AmountForm>
-                <AmountInput placeholder="Enter Amount" type="number" />
-                    <Button>Min</Button>
-                    <Button>Max</Button>
-                    <Button>+1</Button>
-                    <Button>+10</Button>
-                    <Button>1/2</Button>
-                    <Button>x2</Button>
-            </AmountForm>
+            <AmountInput value={amount} onChange={handleChange} placeholder="Enter Amount" type="number" />
+            {getActionButtons}
         </AmountContainer>
     )
 }
