@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { AmountContainer, AmountForm, AmountInput, AmountTotal, AmountTotalText, Button, ButtonsContainer, Icon } from "./Amount.styled";
+import React from "react";
+import { AmountContainer, AmountInput, Button } from "./Amount.styled";
 
 function Amount({ setAmount, amount, money }) {
 
@@ -40,7 +40,7 @@ function Amount({ setAmount, amount, money }) {
 
     return (
         <AmountContainer>
-            <AmountInput value={amount} onChange={handleChange} placeholder="Enter Amount" type="number" />
+            <AmountInput value={amount ? amount : 'Enter Amount'} onChange={handleChange} placeholder="Enter Amount" type="number" />
             {getActionButtons}
         </AmountContainer>
     )
