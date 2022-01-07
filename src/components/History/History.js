@@ -37,7 +37,7 @@ function History({money}){
             <HistoryContainerItem>
                 <TotalIcon src={coin}/>
                 <TotalText>
-                        {money}
+                        {money.toFixed(2)}
                 </TotalText>
             </HistoryContainerItem>
 

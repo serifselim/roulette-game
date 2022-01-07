@@ -39,12 +39,12 @@ export const HistoryItemImage = styled.img`
 `;
 
 export const TotalIcon = styled.img`
-    width: 2rem;
-    margin-right: 1rem;
+    width: 2.5rem;
+    margin-right: 1.5rem;
 `;
 
 export const TotalText = styled.h2`
     color: #0CE287;
-    font-size: 2rem;
+    font-size: 2.5rem;
 `;
 
