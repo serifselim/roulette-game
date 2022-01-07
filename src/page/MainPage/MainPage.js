@@ -21,8 +21,8 @@ function MainPage() {
         let gameResult;
         const randomNumber = Math.floor(Math.random() * 15);
 
-        if (randomNumber <= 7) gameResult = 'purple'
-        else if (randomNumber >= 8 && randomNumber < 14) gameResult = 'red'
+        if (randomNumber <= 6) gameResult = 'purple'
+        else if (randomNumber >= 7 && randomNumber <= 13) gameResult = 'red'
         else gameResult = 'green'
 
         return gameResult;
