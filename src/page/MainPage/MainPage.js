@@ -6,12 +6,11 @@ import { Main } from "./MainPage.styled";
 function MainPage() {
     const [money, setMoney] = useState(100);
     const [amount, setAmount] = useState(0);
-    const [choice, setChoice] = useState();
 
-    const startGame = (choice) => {
+    const startGame = (yourChoice) => {
+        const resultChoice = rollGame();
         if (amount <= money) {
-            setChoice(choice);
-            console.log(rollGame());
+            resultControl(yourChoice, resultChoice);
         } else {
             alert('You need to add more money !');
         }
@@ -26,6 +25,23 @@ function MainPage() {
         else gameResult = 'green'
 
         return gameResult;
+    }
+
+    const resultControl = (yourChoice, resultChoice) => {
+        if (yourChoice !== resultChoice) {
+            setMoney(prevState => prevState -= amount);
+            console.log('Kaybettin !' + yourChoice + resultChoice);
+        } else {
+            if (yourChoice !== 'green') {
+                setMoney(prevState => prevState += 2 * amount)
+                console.log('Kazandın !' + yourChoice + resultChoice);
+
+            } else {
+                setMoney(prevState => prevState += 14 * amount)
+                console.log('Kazandın !' + yourChoice + resultChoice);
+
+            }
+        }
     }
 
     return (

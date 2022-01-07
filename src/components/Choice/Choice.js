@@ -4,8 +4,8 @@ import { ChoiceButton, ChoiceContainer } from './Choice.styled';
 function Choice({ startGame }) {
 
     const handleClick = (e) => {
-        const choice = e.target.value;
-        startGame(choice);
+        const yourChoice = e.target.value;
+        startGame(yourChoice);
     }
 
     return (
