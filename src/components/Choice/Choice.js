@@ -1,7 +1,7 @@
 import React from 'react';
 import { ChoiceButton, ChoiceContainer } from './Choice.styled';
 
-function Choice({ startGame }) {
+function Choice({ startGame,amount}) {
 
     const handleClick = (e) => {
         const yourChoice = e.target.value;

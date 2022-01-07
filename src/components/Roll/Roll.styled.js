@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const RollContainer = styled.section`
     display: flex;
@@ -9,7 +9,7 @@ export const RollContainer = styled.section`
     margin-top: 2rem;
 `;
 
-export const RollImage = styled.img`
+export const ResultImage = styled.img`
     width: 10%;
     padding: 2rem 0;
 
@@ -18,3 +18,22 @@ export const RollImage = styled.img`
     }
     
 `;
+
+const circleAnimation = keyframes`
+     0% { transform: rotate(0deg) }
+     100% { transform: rotate(360deg) }
+`;
+
+export const RollImage = styled(ResultImage)`
+    width: 10%;
+    padding: 2rem 0;
+    animation-name: ${circleAnimation};
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+
+    @media (max-width: 768px){
+        width: 20%;
+    }
+    
+`;
+

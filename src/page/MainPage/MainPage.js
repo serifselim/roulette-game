@@ -3,17 +3,33 @@ import React, { useState, useEffect } from "react";
 import { Amount, Header, History, Roll, Choice } from '../../components'
 import { Main } from "./MainPage.styled";
 
+// İmages
+import green from '../../assets/green.png'
+import red from '../../assets/red.png'
+import purple from '../../assets/purple.png'
+
 function MainPage() {
     const [money, setMoney] = useState(100);
     const [amount, setAmount] = useState(0);
+    const [isRolling, setIsRolling] = useState(false);
+    const [result, setResult] = useState('');
+    const [image, setImage] = useState(green);
 
     const startGame = (yourChoice) => {
-        const resultChoice = rollGame();
-        if (amount <= money) {
-            resultControl(yourChoice, resultChoice);
+        if (amount <= money && amount) {
+            setIsRolling(true);
+
+            setTimeout(() => {
+                const resultChoice = rollGame();
+                resultControl(yourChoice, resultChoice);
+                setResult(resultChoice);
+                setResultImage();
+                setIsRolling(false);
+            }, 2000);
         } else {
             alert('You need to add more money !');
         }
+
     }
 
     const rollGame = () => {
@@ -34,13 +50,23 @@ function MainPage() {
         } else {
             if (yourChoice !== 'green') {
                 setMoney(prevState => prevState += 2 * amount)
-                console.log('Kazandın !' + yourChoice + resultChoice);
-
             } else {
                 setMoney(prevState => prevState += 14 * amount)
-                console.log('Kazandın !' + yourChoice + resultChoice);
-
             }
+        }
+    }
+
+    const setResultImage = () => {
+        switch (result) {
+            case 'red':
+                setImage(red)
+                break;
+            case 'purple':
+                setImage(red);
+                break;
+            default:
+                setImage(green);
+                break;
         }
     }
 
@@ -49,7 +75,7 @@ function MainPage() {
             <Header />
             <Main>
                 <History money={money} />
-                <Roll />
+                <Roll image={image} isRolling={isRolling}/>
                 <Amount money={money} setAmount={setAmount} amount={amount} />
                 <Choice startGame={(choice) => startGame(choice)} />
             </Main>

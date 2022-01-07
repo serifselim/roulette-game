@@ -1,12 +1,16 @@
 import React from 'react';
-import { RollContainer, RollImage } from './Roll.styled';
+import { ResultImage, RollContainer, RollImage } from './Roll.styled';
 
-import green from '../../assets/green.png'
+import roll from '../../assets/roll.png'
 
-function Roll(){
-    return(
+function Roll({ isRolling, image }) {
+    return (
         <RollContainer>
-            <RollImage src={green}/>
+            {isRolling ?
+                <RollImage src={roll} />
+                :
+                <ResultImage src={image} />
+            }
         </RollContainer>
     )
 }
