@@ -9,26 +9,23 @@ function MainPage() {
     const [choice, setChoice] = useState();
 
     const startGame = (choice) => {
-        if(amount <= money){
+        if (amount <= money) {
             setChoice(choice);
-            rollGame();
-        }else {
+            console.log(rollGame());
+        } else {
             alert('You need to add more money !');
         }
     }
 
     const rollGame = () => {
-        const gameResult = Math.floor(Math.random() * 15);
-        if(gameResult <= 7){
-            console.log('result' + gameResult);
-            console.log('purple');
-        }else if(gameResult >= 8 && gameResult < 14){
-            console.log('result' + gameResult);
-            console.log('red');
-        }else{
-            console.log('result' + gameResult);
-            console.log('green');
-        }
+        let gameResult;
+        const randomNumber = Math.floor(Math.random() * 15);
+
+        if (randomNumber <= 7) gameResult = 'purple'
+        else if (randomNumber >= 8 && randomNumber < 14) gameResult = 'red'
+        else gameResult = 'green'
+
+        return gameResult;
     }
 
     return (
