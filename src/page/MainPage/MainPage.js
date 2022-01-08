@@ -12,7 +12,6 @@ function MainPage() {
     const [money, setMoney] = useState(100);
     const [amount, setAmount] = useState(0);
     const [isRolling, setIsRolling] = useState(false);
-    const [result, setResult] = useState('');
     const [image, setImage] = useState(green);
 
     const startGame = (yourChoice) => {
@@ -20,10 +19,9 @@ function MainPage() {
             setIsRolling(true);
 
             setTimeout(() => {
-                const resultChoice = rollGame();
-                resultControl(yourChoice, resultChoice);
-                setResult(resultChoice);
-                setResultImage();
+                const gameResult = rollGame();
+                resultControl(yourChoice, gameResult);
+                setResultImage(gameResult);
                 setIsRolling(false);
             }, 2000);
         } else {
@@ -39,7 +37,6 @@ function MainPage() {
         if (randomNumber <= 6) gameResult = 'purple'
         else if (randomNumber >= 7 && randomNumber <= 13) gameResult = 'red'
         else gameResult = 'green'
-
         return gameResult;
     }
 
@@ -48,26 +45,16 @@ function MainPage() {
             setMoney(prevState => prevState -= amount);
             console.log('Kaybettin !' + yourChoice + resultChoice);
         } else {
-            if (yourChoice !== 'green') {
-                setMoney(prevState => prevState += 2 * amount)
-            } else {
-                setMoney(prevState => prevState += 14 * amount)
-            }
+            if (yourChoice !== 'green') setMoney(prevState => prevState += 2 * amount);
+            else setMoney(prevState => prevState += 14 * amount);
+
         }
     }
 
-    const setResultImage = () => {
-        switch (result) {
-            case 'red':
-                setImage(red)
-                break;
-            case 'purple':
-                setImage(red);
-                break;
-            default:
-                setImage(green);
-                break;
-        }
+    const setResultImage = (gameResult) => {
+        if (gameResult === 'purple') setImage(purple);
+        else if (gameResult === 'red') setImage(red);
+        else setImage(green);
     }
 
     return (
@@ -75,7 +62,7 @@ function MainPage() {
             <Header />
             <Main>
                 <History money={money} />
-                <Roll image={image} isRolling={isRolling}/>
+                <Roll image={image} isRolling={isRolling} />
                 <Amount money={money} setAmount={setAmount} amount={amount} />
                 <Choice startGame={(choice) => startGame(choice)} />
             </Main>
