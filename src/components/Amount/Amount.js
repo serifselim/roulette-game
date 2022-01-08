@@ -7,7 +7,9 @@ function Amount({ setAmount, amount, money }) {
 
     const handleChange = (e) => {
         const currentAmount = e.target.value;
-        setAmount(prevState => prevState = currentAmount);
+        if (currentAmount > 0) {
+            setAmount(prevState => prevState = currentAmount);
+        }
     }
 
     const handleClick = (action) => {
