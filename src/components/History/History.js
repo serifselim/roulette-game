@@ -5,8 +5,8 @@ import red from '../../assets/red.png'
 import { HistoryContainer, HistoryContainerItem, HistoryTitle, HistoryList, HistoryItemImage, HistoryListItem, TotalIcon, TotalText } from './History.styled';
 import coin from '../../assets/coin.svg';
 
-function History({money}){
-    return(
+function History({ gameHistoryList, money }) {
+    return (
         <HistoryContainer>
             <HistoryContainerItem>
                 <HistoryTitle>
@@ -14,30 +14,23 @@ function History({money}){
                 </HistoryTitle>
 
                 <HistoryList>
-                    <HistoryListItem>
-                        <HistoryItemImage src={purple}/>
-                    </HistoryListItem>
-                    
-                    <HistoryListItem>
-                        <HistoryItemImage src={red}/>
-                    </HistoryListItem>
-                    
-                    <HistoryListItem>
-                        <HistoryItemImage src={green}/>
-                    </HistoryListItem>
-                    
-                    <HistoryListItem>
-                        <HistoryItemImage src={purple}/>
-                    </HistoryListItem>
+                    {
+                        gameHistoryList &&
+                        gameHistoryList.map((game, index) => (
+                            <HistoryListItem key={index}>
+                                <HistoryItemImage alt={game.resultText} src={game.resultImage} />
+                            </HistoryListItem>
+                        ))
+                    }
                 </HistoryList>
 
 
             </HistoryContainerItem>
 
             <HistoryContainerItem>
-                <TotalIcon src={coin}/>
+                <TotalIcon src={coin} />
                 <TotalText>
-                        {money.toFixed(2)}
+                    {money.toFixed(2)}
                 </TotalText>
             </HistoryContainerItem>
 

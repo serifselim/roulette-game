@@ -12,7 +12,8 @@ function MainPage() {
     const [money, setMoney] = useState(100);
     const [amount, setAmount] = useState(0);
     const [isRolling, setIsRolling] = useState(false);
-    const [image, setImage] = useState(green);
+    const [image, setImage] = useState();
+    const [gameHistoryList, setGameHistoryList] = useState([]);
 
     const startGame = (yourChoice) => {
         if (amount <= money && amount) {
@@ -21,13 +22,18 @@ function MainPage() {
             setTimeout(() => {
                 const gameResult = rollGame();
                 resultControl(yourChoice, gameResult);
-                setResultImage(gameResult);
+                setImage(setResultImage(gameResult));
+
+                setGameHistoryList(prevState => [...prevState, {
+                    resultText: gameResult,
+                    resultImage: setResultImage(gameResult)
+                }]);
+
                 setIsRolling(false);
             }, 2000);
         } else {
             alert('You need to add more money !');
         }
-
     }
 
     const rollGame = () => {
@@ -43,7 +49,6 @@ function MainPage() {
     const resultControl = (yourChoice, resultChoice) => {
         if (yourChoice !== resultChoice) {
             setMoney(prevState => prevState -= amount);
-            console.log('Kaybettin !' + yourChoice + resultChoice);
         } else {
             if (yourChoice !== 'green') setMoney(prevState => prevState += 2 * amount);
             else setMoney(prevState => prevState += 14 * amount);
@@ -52,16 +57,16 @@ function MainPage() {
     }
 
     const setResultImage = (gameResult) => {
-        if (gameResult === 'purple') setImage(purple);
-        else if (gameResult === 'red') setImage(red);
-        else setImage(green);
+        if (gameResult === 'purple') return purple;
+        else if (gameResult === 'red') return red;
+        else return green;
     }
 
     return (
         <>
             <Header />
             <Main>
-                <History money={money} />
+                <History gameHistoryList={gameHistoryList} money={money} />
                 <Roll image={image} isRolling={isRolling} />
                 <Amount money={money} setAmount={setAmount} amount={amount} />
                 <Choice startGame={(choice) => startGame(choice)} />

@@ -26,6 +26,7 @@ export const HistoryTitle = styled.h4`
 
 export const HistoryList = styled.ul`
     display: flex;
+    flex-direction: row-reverse;
     margin-left: 2rem;
 `;
 
