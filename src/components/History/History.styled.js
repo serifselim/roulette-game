@@ -5,7 +5,7 @@ export const HistoryContainer = styled.div`
     justify-content: space-between;
     background-color: #17191F;
     border-radius: 1rem;
-    padding: .5rem 3rem;
+    padding: 1.5rem 3rem;
 
     @media (max-width: 768px){
         flex-direction: column-reverse;
@@ -26,17 +26,33 @@ export const HistoryTitle = styled.h4`
 
 export const HistoryList = styled.ul`
     display: flex;
-    flex-direction: row-reverse;
-    margin-left: 2rem;
 `;
 
 export const HistoryListItem = styled.li`
+    display: flex;
+    align-content: center;
+    position: relative;
     list-style: none;
     padding: 1rem;
 `;
 
 export const HistoryItemImage = styled.img`
-    width: 2rem;
+    width: 3rem;
+    height: 3rem;
+`;
+
+export const HistoryItemText = styled.span`
+    color: #e5e5e5;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-right: .4rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+`;
+
+export const TotalContainerItem = styled(HistoryContainerItem)`
+    margin-bottom: 1rem;
 `;
 
 export const TotalIcon = styled.img`
@@ -45,7 +61,7 @@ export const TotalIcon = styled.img`
 `;
 
 export const TotalText = styled.h2`
-    color: #0CE287;
+    color: #B19A00;
     font-size: 2.5rem;
 `;
 

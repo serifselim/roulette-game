@@ -7,7 +7,7 @@ export const RollContainer = styled.section`
     background-color: #17191F;
     border-radius: 1rem;
     margin-top: 2rem;
-    padding: 2rem 0;
+    padding: 1rem 0;
     min-height: 20rem;
 
     
@@ -20,7 +20,7 @@ export const ResultImage = styled.img`
     width: 10%;
 
     @media (max-width: 768px){
-        width: 20%;
+        width: 27%;
     }
     
 `;
@@ -33,11 +33,11 @@ const circleAnimation = keyframes`
 export const RollImage = styled(ResultImage)`
     width: 10%;
     animation-name: ${circleAnimation};
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-iteration-count: infinite;
 
     @media (max-width: 768px){
-        width: 20%;
+        width: 27%;
     }
     
 `;

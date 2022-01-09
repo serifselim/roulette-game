@@ -15,6 +15,10 @@ function MainPage() {
     const [image, setImage] = useState();
     const [gameHistoryList, setGameHistoryList] = useState([]);
 
+    useEffect(() => {
+        console.log(gameHistoryList);
+    }, [gameHistoryList])
+
     const startGame = (yourChoice) => {
         if (amount <= money && amount) {
             setIsRolling(true);
@@ -23,12 +27,7 @@ function MainPage() {
                 const gameResult = rollGame();
                 resultControl(yourChoice, gameResult);
                 setImage(setResultImage(gameResult));
-
-                setGameHistoryList(prevState => [...prevState, {
-                    resultText: gameResult,
-                    resultImage: setResultImage(gameResult)
-                }]);
-
+                setGameHistoryList(prevState => [...prevState, gameResult]);
                 setIsRolling(false);
             }, 2000);
         } else {
