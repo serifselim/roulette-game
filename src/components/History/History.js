@@ -22,14 +22,6 @@ function History({ gameHistoryList, money }) {
         <HistoryContainer>
             <HistoryContainerItem>
                 <HistoryList>
-                    {/* {
-                        gameHistoryList &&
-                        gameHistoryList.map((game, index) => (
-                            <HistoryListItem key={index}>
-                                <HistoryItemImage alt={game.resultText} src={game.resultImage} />
-                            </HistoryListItem>
-                        ))
-                    } */}
 
                     <HistoryListItem>
                         <HistoryItemText>x{gameHistoryData.purple}</HistoryItemText>
@@ -46,7 +38,6 @@ function History({ gameHistoryList, money }) {
                         <HistoryItemImage src={red} />
                     </HistoryListItem>
                 </HistoryList>
-
 
             </HistoryContainerItem>
 

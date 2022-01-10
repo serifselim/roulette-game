@@ -12,12 +12,20 @@ export const AmountContainer = styled.section`
     margin-top: 2rem;
 
     @media (max-width: 768px){
-        justify-content: space-between;
+        justify-content: center;
     }
+
+    @media (max-width: 470px){
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+
 `;
 
 export const AmountInputContainer = styled.div`
     position: relative;
+    display: flex;
 
     &::before{
         content: url(${coin});
@@ -29,6 +37,11 @@ export const AmountInputContainer = styled.div`
         height: 2.2rem;
         opacity: .5;
     } 
+    
+    @media (max-width: 768px) {
+        width: 100%;
+            margin-bottom: 1rem;
+        }
 `;
 
 export const AmountInput = styled.input`
@@ -53,7 +66,6 @@ export const AmountInput = styled.input`
 
     @media (max-width: 768px){
         width: 100%;
-        margin-bottom: 2rem;
     }
 
 `;
@@ -69,5 +81,14 @@ export const Button = styled.button`
     &:hover{
         background-color: #2D303D;
     }
+
+    
+    @media (max-width: 470px){
+        &:not(:first-child){
+            margin-bottom: 1rem;
+        }
+    }
+
+    
     
 `;

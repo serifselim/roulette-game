@@ -19,6 +19,11 @@ export const ChoiceButton = styled.button`
         margin: 0 2rem;
     }
 
+    
+    @media (max-width: 768px){
+        font-size: 1.2rem;
+    }
+
     &:hover{
         opacity: .9;
     }
