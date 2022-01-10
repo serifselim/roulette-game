@@ -3,10 +3,10 @@ import purple from '../../assets/purple.png'
 import green from '../../assets/green.png'
 import red from '../../assets/red.png'
 
-import { HistoryContainer, HistoryContainerItem, HistoryTitle, HistoryList, HistoryItemImage, HistoryItemText, HistoryListItem, TotalIcon, TotalText, TotalContainerItem } from './History.styled';
+import { HistoryContainer, HistoryContainerItem, HistoryTitle, HistoryList, HistoryItemImage, HistoryItemText, HistoryListItem, TotalIcon, TotalText, TotalContainerItem, ResultScreenContainer, ResultScreenText } from './History.styled';
 import coin from '../../assets/coin.svg';
 
-function History({ gameHistoryList, money }) {
+function History({ gameHistoryList, money, resultScreenData }) {
 
     const [gameHistoryData, setGameHistoryData] = useState({});
 
@@ -20,9 +20,15 @@ function History({ gameHistoryList, money }) {
 
     return (
         <HistoryContainer>
+            
+            <ResultScreenContainer bgColor={resultScreenData.resultScreenColor}>
+                <ResultScreenText>
+                    {resultScreenData.resultScreenText}
+                </ResultScreenText>
+            </ResultScreenContainer>
+
             <HistoryContainerItem>
                 <HistoryList>
-
                     <HistoryListItem>
                         <HistoryItemText>x{gameHistoryData.purple}</HistoryItemText>
                         <HistoryItemImage src={purple} />
@@ -38,7 +44,6 @@ function History({ gameHistoryList, money }) {
                         <HistoryItemImage src={red} />
                     </HistoryListItem>
                 </HistoryList>
-
             </HistoryContainerItem>
 
             <TotalContainerItem>
@@ -47,7 +52,6 @@ function History({ gameHistoryList, money }) {
                     {money.toFixed(2)}
                 </TotalText>
             </TotalContainerItem>
-
         </HistoryContainer>
     );
 }

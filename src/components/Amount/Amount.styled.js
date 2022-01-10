@@ -12,14 +12,8 @@ export const AmountContainer = styled.section`
     margin-top: 2rem;
 
     @media (max-width: 768px){
-        justify-content: center;
+        justify-content: space-between;
     }
-
-    @media (max-width: 470px){
-        flex-direction: column;
-        align-items: stretch;
-    }
-
 
 `;
 
@@ -40,7 +34,6 @@ export const AmountInputContainer = styled.div`
     
     @media (max-width: 768px) {
         width: 100%;
-            margin-bottom: 1rem;
         }
 `;
 
@@ -53,6 +46,7 @@ export const AmountInput = styled.input`
     font-size: 1.7rem;
     font-weight: bold;
     -moz-appearance: textfield;
+    margin: 0;
     
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button {
@@ -76,6 +70,8 @@ export const Button = styled.button`
     color: #909090;
     margin: 0 1rem;
     padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
     position: relative;
 
     &:hover{
@@ -84,9 +80,10 @@ export const Button = styled.button`
 
     
     @media (max-width: 470px){
-        &:not(:first-child){
-            margin-bottom: 1rem;
-        }
+        /* &:not(:first-child){
+            margin-bottom: .5rem;
+        } */
+        display: none;
     }
 
     

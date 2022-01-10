@@ -1,7 +1,7 @@
 import React from "react";
 import { AmountContainer, AmountInput, AmountInputContainer, Button } from "./Amount.styled";
 
-function Amount({ setAmount, amount, money }) {
+function Amount({ setAmount, amount, money, isRolling }) {
 
     const actionsList = ['Min', 'Max', '+1', '+10', '1/2', 'x2'];
 
@@ -38,12 +38,12 @@ function Amount({ setAmount, amount, money }) {
     }
 
     const getActionButtons = actionsList.map((action, index) =>
-        <Button key={index} value={action} onClick={() => handleClick(action)}>{action}</Button>);
+        <Button disabled={isRolling} key={index} value={action} onClick={() => handleClick(action)}>{action}</Button>);
 
     return (
         <AmountContainer>
             <AmountInputContainer>
-                <AmountInput value={amount ? amount : 'Enter Amount'} onChange={handleChange} placeholder="Enter Amount" type="number" />
+                <AmountInput readOnly={isRolling} value={amount ? amount : 'Enter Amount'} onChange={handleChange} placeholder="Enter Amount" type="number" />
             </AmountInputContainer>
             {getActionButtons}
         </AmountContainer>

@@ -14,6 +14,11 @@ function MainPage() {
     const [isRolling, setIsRolling] = useState(false);
     const [image, setImage] = useState();
     const [gameHistoryList, setGameHistoryList] = useState([]);
+    const [resultScreenData, setResultScreenData] = useState({});
+
+    useEffect(() => {
+        console.log(resultScreenData);
+    }, [resultScreenData]);
 
     const startGame = (yourChoice) => {
         if (amount <= money && amount) {
@@ -44,10 +49,11 @@ function MainPage() {
     const resultControl = (yourChoice, resultChoice) => {
         if (yourChoice !== resultChoice) {
             setMoney(prevState => prevState -= amount);
+            setResultScreen(false);
         } else {
             if (yourChoice !== 'green') setMoney(prevState => prevState += 2 * amount);
             else setMoney(prevState => prevState += 14 * amount);
-
+            setResultScreen(true);
         }
     }
 
@@ -57,14 +63,26 @@ function MainPage() {
         else return green;
     }
 
+    const setResultScreen = (isWin) => {
+        setResultScreenData({
+            resultScreenText: isWin ? 'You Win !' : 'You Lost !',
+            resultScreenColor: isWin ? '#B19A00' : '#9C0203'
+        });
+
+        setTimeout(() => {
+            setResultScreenData({});
+        }, 1000);
+    }
+
     return (
         <>
             <Header />
             <Main>
-                <History gameHistoryList={gameHistoryList} money={money} />
+                <History resultScreenData={resultScreenData} gameHistoryList={gameHistoryList} money={money} />
                 <Roll image={image} isRolling={isRolling} />
-                <Amount money={money} setAmount={setAmount} amount={amount} />
-                <Choice startGame={(choice) => startGame(choice)} />
+
+                <Amount isRolling={isRolling} money={money} setAmount={setAmount} amount={amount} />
+                <Choice isRolling={isRolling} startGame={(choice) => startGame(choice)} />
             </Main>
         </>
     );
