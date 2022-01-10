@@ -52,7 +52,9 @@ export const HistoryItemText = styled.span`
 `;
 
 export const TotalContainerItem = styled(HistoryContainerItem)`
-    margin-bottom: 1rem;
+    @media (max-width: 768px){
+        margin-bottom: 1rem;
+    }   
 `;
 
 export const TotalIcon = styled.img`

@@ -10,22 +10,25 @@ export const AmountContainer = styled.section`
     border-radius: 1rem;
     padding: 1rem 3rem;
     margin-top: 2rem;
-    position: relative;
-
-    &::before{
-        display: block;
-        content: '';
-        background-image: url(${coin});
-        width: 2.2rem;
-        top: 2;
-        left: 2;
-        position: absolute;
-        height: 2.2rem;
-    }
 
     @media (max-width: 768px){
         justify-content: space-between;
     }
+`;
+
+export const AmountInputContainer = styled.div`
+    position: relative;
+
+    &::before{
+        content: url(${coin});
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 2.2rem;
+        height: 2.2rem;
+        opacity: .5;
+    } 
 `;
 
 export const AmountInput = styled.input`
@@ -34,9 +37,15 @@ export const AmountInput = styled.input`
     border-radius: .5rem;
     border: none;
     color: #909090;
-    font-size: 1.9rem;
-    text-align: center;
+    font-size: 1.7rem;
     font-weight: bold;
+    -moz-appearance: textfield;
+    
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
 
     &:focus{
         outline: none;

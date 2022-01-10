@@ -1,5 +1,5 @@
 import React from "react";
-import { AmountContainer, AmountInput, Button } from "./Amount.styled";
+import { AmountContainer, AmountInput, AmountInputContainer, Button } from "./Amount.styled";
 
 function Amount({ setAmount, amount, money }) {
 
@@ -42,7 +42,9 @@ function Amount({ setAmount, amount, money }) {
 
     return (
         <AmountContainer>
-            <AmountInput value={amount ? amount : 'Enter Amount'} onChange={handleChange} placeholder="Enter Amount" type="number" />
+            <AmountInputContainer>
+                <AmountInput value={amount ? amount : 'Enter Amount'} onChange={handleChange} placeholder="Enter Amount" type="number" />
+            </AmountInputContainer>
             {getActionButtons}
         </AmountContainer>
     )
