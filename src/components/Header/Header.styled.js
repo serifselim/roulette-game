@@ -12,7 +12,7 @@ const HeaderTitle = styled.h1`
 `;
 
 const HeaderSpan = styled.span`
-    color: #0BF894;
+    color: #B19A00;
     font-style: italic;
     font-weight: 400;
 `;

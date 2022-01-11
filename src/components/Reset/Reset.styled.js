@@ -19,5 +19,6 @@ export const ResetButton = styled.button`
     @media (max-width: 768px) {
         font-size: 1.3rem;
         border-radius: .5rem;
+        width: 100%;
     }
 `;

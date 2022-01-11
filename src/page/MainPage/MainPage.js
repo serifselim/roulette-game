@@ -1,22 +1,36 @@
 import React, { useState, useEffect } from "react";
 
-import { Amount, Header, History, Roll, Choice, Reset } from '../../components'
+import { Amount, Header, Roll, Choice, Reset, Details } from '../../components'
 import { Main } from "./MainPage.styled";
 
 // İmages
 import green from '../../assets/green.png'
 import red from '../../assets/red.png'
 import purple from '../../assets/purple.png'
+import start from '../../assets/start.png'
 
 function MainPage() {
     const [money, setMoney] = useState(100);
     const [amount, setAmount] = useState(0);
     const [isRolling, setIsRolling] = useState(false);
-    const [image, setImage] = useState();
+    const [image, setImage] = useState(start);
     const [gameHistoryList, setGameHistoryList] = useState([]);
     const [resultScreenData, setResultScreenData] = useState({});
 
     useEffect(() => {
+        getFromLocalStorage();
+    }, [])
+
+    useEffect(() => {
+        setToLocalStorage(gameHistoryList, money)
+    }, [gameHistoryList, money]);
+
+    const setToLocalStorage = (gameHistoryList, money) => {
+        localStorage.setItem('money', JSON.stringify(money))
+        localStorage.setItem('gameHistoryList', JSON.stringify(gameHistoryList))
+    }
+
+    const getFromLocalStorage = () => {
         const listData = JSON.parse(localStorage.getItem('gameHistoryList'));
         const moneyData = JSON.parse(localStorage.getItem('money'));
 
@@ -24,12 +38,7 @@ function MainPage() {
             setGameHistoryList(listData);
             setMoney(moneyData);
         }
-    }, [])
-
-    useEffect(() => {
-        localStorage.setItem('money', JSON.stringify(money))
-        localStorage.setItem('gameHistoryList', JSON.stringify(gameHistoryList))
-    }, [gameHistoryList, money]);
+    }
 
     const startGame = (yourChoice) => {
         if (amount <= money && amount) {
@@ -60,7 +69,6 @@ function MainPage() {
     const resetGame = () => {
         setMoney(100);
         setGameHistoryList([]);
-        console.log('hello world')
     }
 
     const resultControl = (yourChoice, resultChoice) => {
@@ -96,7 +104,7 @@ function MainPage() {
         <>
             <Header />
             <Main>
-                <History
+                <Details
                     resultScreenData={resultScreenData}
                     resetGame={resetGame}
                     gameHistoryList={gameHistoryList}
