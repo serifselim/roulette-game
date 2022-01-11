@@ -17,8 +17,19 @@ function MainPage() {
     const [resultScreenData, setResultScreenData] = useState({});
 
     useEffect(() => {
-        console.log(resultScreenData);
-    }, [resultScreenData]);
+        const listData = JSON.parse(localStorage.getItem('gameHistoryList'));
+        const moneyData = JSON.parse(localStorage.getItem('money'));
+
+        if (listData) {
+            setGameHistoryList(listData);
+            setMoney(moneyData);
+        }
+    }, [])
+
+    useEffect(() => {
+        localStorage.setItem('money', JSON.stringify(money))
+        localStorage.setItem('gameHistoryList', JSON.stringify(gameHistoryList))
+    }, [gameHistoryList, money]);
 
     const startGame = (yourChoice) => {
         if (amount <= money && amount) {
