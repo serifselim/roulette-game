@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { Amount, Header, History, Roll, Choice } from '../../components'
+import { Amount, Header, History, Roll, Choice, Reset } from '../../components'
 import { Main } from "./MainPage.styled";
 
 // İmages
@@ -57,6 +57,12 @@ function MainPage() {
         return gameResult;
     }
 
+    const resetGame = () => {
+        setMoney(100);
+        setGameHistoryList([]);
+        console.log('hello world')
+    }
+
     const resultControl = (yourChoice, resultChoice) => {
         if (yourChoice !== resultChoice) {
             setMoney(prevState => prevState -= amount);
@@ -85,15 +91,38 @@ function MainPage() {
         }, 1000);
     }
 
+
     return (
         <>
             <Header />
             <Main>
-                <History resultScreenData={resultScreenData} gameHistoryList={gameHistoryList} money={money} />
-                <Roll image={image} isRolling={isRolling} />
+                <History
+                    resultScreenData={resultScreenData}
+                    resetGame={resetGame}
+                    gameHistoryList={gameHistoryList}
+                    money={money}
+                />
 
-                <Amount isRolling={isRolling} money={money} setAmount={setAmount} amount={amount} />
-                <Choice isRolling={isRolling} startGame={(choice) => startGame(choice)} />
+                <Roll
+                    image={image}
+                    isRolling={isRolling}
+                />
+
+                <Amount
+                    isRolling={isRolling}
+                    money={money}
+                    setAmount={setAmount}
+                    amount={amount}
+                />
+
+                <Choice
+                    isRolling={isRolling}
+                    startGame={(choice) => startGame(choice)}
+                />
+
+                <Reset
+                    resetGame={resetGame}
+                />
             </Main>
         </>
     );

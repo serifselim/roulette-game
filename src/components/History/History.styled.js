@@ -85,6 +85,7 @@ export const ResultScreenContainer = styled.div`
 export const ResultScreenText = styled.h2`
     color: #fff;
     font-size: 2.5rem;
-`
+`;
+
 
 
