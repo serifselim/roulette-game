@@ -16,6 +16,10 @@ export const ResetButton = styled.button`
     font-weight: bold;
     padding: 1rem 2rem;
 
+    &:hover{
+        opacity: .9;
+    }
+
     @media (max-width: 768px) {
         font-size: 1.3rem;
         border-radius: .5rem;

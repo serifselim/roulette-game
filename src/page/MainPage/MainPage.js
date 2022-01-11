@@ -41,7 +41,7 @@ function MainPage() {
     }
 
     const startGame = (yourChoice) => {
-        if (amount <= money && amount) {
+        if (amount <= money && amount && amount >= 1) {
             setIsRolling(true);
 
             setTimeout(() => {

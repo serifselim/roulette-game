@@ -7,7 +7,7 @@ function Amount({ setAmount, amount, money, isRolling }) {
 
     const handleChange = (e) => {
         const currentAmount = e.target.value;
-        if (currentAmount > 0) {
+        if (currentAmount >= 0) {
             setAmount(prevState => prevState = currentAmount);
         }
     }
@@ -21,10 +21,10 @@ function Amount({ setAmount, amount, money, isRolling }) {
                 setAmount(prevState => prevState = money);
                 break;
             case '+1':
-                setAmount(prevState => prevState += 1);
+                setAmount(prevState => prevState = Number(prevState) + 1);
                 break;
             case '+10':
-                setAmount(prevState => prevState += 10);
+                setAmount(prevState => prevState = Number(prevState) + 10);
                 break;
             case '1/2':
                 setAmount(prevState => prevState /= 2);
