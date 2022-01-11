@@ -1,4 +1,4 @@
-## Roulette Game [Vercel Live](https://roulette-game-orcin.vercel.app/)
+## Roulette Game [Live](https://roulette-game-orcin.vercel.app/)
 
 <img src="https://im3.ezgif.com/tmp/ezgif-3-63650eff26.gif" style="border-radius:20px"/>
 
